@@ -29,7 +29,7 @@ Output goes to `%TEMP%/dev-docs/ahk/`. The `GhPagesAdapter`:
 - Removes static asset `<img>` tags (logo, icons)
 - Rewrites `<a href="*.htm">` → `*.md`; skips `mailto:`, `#anchor`, and `http(s)://` links
 
-Always convert before querying raw HTML.
+Locate first, convert only what you need. Grep the raw `.htm` directly (grep behaves identically on HTML and Markdown), or use the filename table below. Then read the raw file, or convert just the one you need with `uv run python scripts/html2md.py references/ahk/docs/lib/<FunctionName>.htm`. Convert the whole corpus (`uv run python scripts/html2md.py ahk`) only for broad browsing.
 
 ## How to find topics
 
